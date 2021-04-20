@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    // id 'kotlin-android-extension'
     id 'kotlin-kapt'
+    // id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
