@@ -1,12 +1,15 @@
 package com.example.kotlinroomdatabase.fragments.add
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.kotlinroomdatabase.R
+import com.example.kotlinroomdatabase.data.User
 import com.example.kotlinroomdatabase.data.UserViewModel
 import com.example.kotlinroomdatabase.databinding.FragmentAddBinding
 
@@ -38,6 +41,20 @@ class AddFragment : Fragment() {
         // val firstName = addFirstNameEt.text.toString() // <- Error : Unresolved reference: addFirstNameEt
         val firstName = binding.addFirstNameEt.text.toString() // <- This is correct
         val lastName = binding.addLastNameEt.text.toString()
+        val age = binding.addAgeEt.text
+
+        // Check if the inputCheck function is true
+        if(inputCheck(firstName, lastName, age)) {
+            // Create User Object
+            val user = User(0, firstName, lastName, Integer.parseInt(age.toString())) // <- Pass id, firstName, lastName, and age. Although id will be auto-generated because it is a primary key, we need to pass a value or zero (Don't worry, the Room library knows it is the primary key and is auto-generated).
+
+            // Add Data to database
+            mUserViewModel.addUser(user)
+        }
+    }
+
+    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
     }
 
     override fun onDestroyView() {
