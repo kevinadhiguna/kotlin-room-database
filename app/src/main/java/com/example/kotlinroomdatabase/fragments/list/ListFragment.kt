@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.kotlinroomdatabase.R
 import com.example.kotlinroomdatabase.databinding.FragmentListBinding
 
@@ -20,7 +21,9 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentListBinding.inflate(inflater, container, false)
 
-        binding.floatingActionButton
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_addFragment)
+        }
 
         return binding.root
     }
