@@ -5,16 +5,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.kotlinroomdatabase.R
+import com.example.kotlinroomdatabase.data.UserViewModel
+import com.example.kotlinroomdatabase.databinding.FragmentAddBinding
 
 class AddFragment : Fragment() {
+
+    private var _binding: FragmentAddBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var mUserViewModel: UserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false)
+        _binding = FragmentAddBinding.inflate(inflater, container, false)
+
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null // <- whenever we destroy our fragment, _binding is set to null. Hence it will avoid memory leaks.
     }
 
 }
