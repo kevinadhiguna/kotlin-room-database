@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.kotlinroomdatabase.fragments.list.ListFragment"
-        android:label="fragment_list"
+        android:label="List"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.kotlinroomdatabase.fragments.add.AddFragment"
-        android:label="fragment_add"
+        android:label="Add"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
