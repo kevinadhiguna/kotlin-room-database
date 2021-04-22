@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addFirstName_et" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/addAge_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
