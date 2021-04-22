@@ -26,7 +26,15 @@ class AddFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+        binding.addBtn.setOnClickListener {
+            insertDataToDatabase()
+        }
+
         return binding.root
+    }
+
+    private fun insertDataToDatabase() {
+        val firstName = addFirstName_et.text.toString() // <- Error : Unresolved reference: addFirstName_et
     }
 
     override fun onDestroyView() {
