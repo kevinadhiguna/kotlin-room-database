@@ -34,7 +34,10 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
-        val firstName = addFirstName_et.text.toString() // <- Error : Unresolved reference: addFirstName_et
+        // val firstName = addFirstName_et.text.toString() // viewBinding will automatically convert addFirstName_et to addFirstNameEt. Thus, addFirstName_et does not exist.
+        // val firstName = addFirstNameEt.text.toString() // <- Error : Unresolved reference: addFirstNameEt
+        val firstName = binding.addFirstNameEt.text.toString() // <- This is correct
+        val lastName = binding.addLastNameEt.text.toString()
     }
 
     override fun onDestroyView() {
