@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [User::class],
     version = 1,                // <- Database version
-    exportSchema = false
+    exportSchema = true
 )
 abstract class UserDatabase: RoomDatabase() { // <- Add 'abstract' keyword and extends RoomDatabase
     abstract fun userDao(): UserDao
