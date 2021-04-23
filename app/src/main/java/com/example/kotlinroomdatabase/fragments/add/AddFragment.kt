@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.kotlinroomdatabase.R
 import com.example.kotlinroomdatabase.data.User
 import com.example.kotlinroomdatabase.data.UserViewModel
@@ -50,6 +52,11 @@ class AddFragment : Fragment() {
 
             // Add Data to database
             mUserViewModel.addUser(user)
+            Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+            // Navigate back
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        } else {
+            Toast.makeText(requireContext(), "Please fill out all fields!", Toast.LENGTH_LONG).show()
         }
     }
 
