@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 // A ViewModel acts as a communication center between the Repository and the UI.
 
 class UserViewModel(application: Application): AndroidViewModel(application) {
-    private val readAllData: LiveData<List<User>>
+    val readAllData: LiveData<List<User>>
     private val repository: UserRepository
 
     init {
