@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.kotlinroomdatabase.R
 import com.example.kotlinroomdatabase.databinding.FragmentUpdateBinding
 import com.example.kotlinroomdatabase.model.User
 import com.example.kotlinroomdatabase.viewModel.UserViewModel
@@ -48,6 +51,15 @@ class UpdateFragment : Fragment() {
         if (inputCheck(firstName, lastName, binding.updateAgeEt.text)) {
             // Create User Object
             val updatedUser = User(args.currentUser.id, firstName, lastName, age)
+
+            // Update Current User
+            mUserViewModel.updateUser(updatedUser)
+            Toast.makeText(requireContext(), "Updated Successfully !", Toast.LENGTH_SHORT).show()
+
+            // Navigate back to List Fragment
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        } else {
+            Toast.makeText(requireContext(), "Please fill all fields !", Toast.LENGTH_SHORT).show()
         }
     }
 
