@@ -38,7 +38,9 @@ class UpdateFragment : Fragment() {
         binding.updateLastNameEt.setText(args.currentUser.lastName)
         binding.updateAgeEt.setText(args.currentUser.age.toString())
 
-        binding.updateBtn.setOnClickListener {  }
+        binding.updateBtn.setOnClickListener {
+            updateItem()
+        }
 
         return binding.root
     }
