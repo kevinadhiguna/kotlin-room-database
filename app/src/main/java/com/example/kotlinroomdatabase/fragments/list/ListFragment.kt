@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinroomdatabase.R
-import com.example.kotlinroomdatabase.data.UserViewModel
+import com.example.kotlinroomdatabase.viewModel.UserViewModel
 import com.example.kotlinroomdatabase.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
