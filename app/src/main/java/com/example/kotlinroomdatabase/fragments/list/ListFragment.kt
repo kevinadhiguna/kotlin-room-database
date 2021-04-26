@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.kotlinroomdatabase.R
+import com.example.kotlinroomdatabase.data.UserViewModel
 import com.example.kotlinroomdatabase.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -14,12 +15,17 @@ class ListFragment : Fragment() {
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var mUserViewModel: UserViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentListBinding.inflate(inflater, container, false)
+
+        // RecyclerView
+        // val recyclerView = view.recyclerview
 
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
