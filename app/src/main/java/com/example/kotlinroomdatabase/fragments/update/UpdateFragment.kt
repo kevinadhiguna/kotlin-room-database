@@ -82,6 +82,18 @@ class UpdateFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
+    // Implement logic to delete a user
+    private fun deleteUser() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->     // Make a "Yes" option and set action if the user selects "Yes"
+
+        }
+        builder.setPositiveButton("No") { _, _ -> }    // Make a "No" option and set action if the user selects "No"
+        builder.setTitle("Delete ${args.currentUser.firstName} ?")  // Set the title of the prompt with a sentence saying the first name of the user inside the app (using template string)
+        builder.setMessage("Are you sure to remove ${args.currentUser.firstName} ?")  // Set the message of the prompt with a sentence saying the first name of the user inside the app (using template string)
+        builder.create().show()  // Create a prompt with the configuration above to ask the user (the real app user which is human)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // <- whenever we destroy our fragment, _binding is set to null. Hence it will avoid memory leaks.
