@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinroomdatabase.R
 import com.example.kotlinroomdatabase.model.User
@@ -34,7 +35,9 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.findViewById<TextView>(R.id.age_txt).text = currentItem.age.toString()
 
         holder.itemView.findViewById<ConstraintLayout>(R.id.rowLayout).setOnClickListener {
-            val action = ListFragmentDirections // <- Pass object to Update Fragment
+            // warning : Sometime, you need to 'rebuild project' (on the topbar, click Build > Rebuild Project) to be able to see the 'actionListFragmentToUpdateFragment()' suggestion.
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem) // <- Pass object to Update Fragment
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
