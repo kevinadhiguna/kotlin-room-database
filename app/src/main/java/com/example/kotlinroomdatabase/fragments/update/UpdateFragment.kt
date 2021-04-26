@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.kotlinroomdatabase.databinding.FragmentUpdateBinding
+import com.example.kotlinroomdatabase.model.User
 import com.example.kotlinroomdatabase.viewModel.UserViewModel
 
 class UpdateFragment : Fragment() {
@@ -30,11 +31,11 @@ class UpdateFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        binding.updateBtn.setOnClickListener {  }
-
         binding.updateFirstNameEt.setText(args.currentUser.firstName)
         binding.updateLastNameEt.setText(args.currentUser.lastName)
         binding.updateAgeEt.setText(args.currentUser.age.toString())
+
+        binding.updateBtn.setOnClickListener {  }
 
         return binding.root
     }
@@ -44,7 +45,10 @@ class UpdateFragment : Fragment() {
         val lastName = binding.updateLastNameEt.text.toString()
         val age = binding.updateAgeEt.text.toString()
 
-        if (inputCheck(firstName, lastName, binding.updateAgeEt.text)) {  }
+        if (inputCheck(firstName, lastName, binding.updateAgeEt.text)) {
+            // Create User Object
+            val updatedUser = User(args.currentUser.id, firstName, lastName, age)
+        }
     }
 
     private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
