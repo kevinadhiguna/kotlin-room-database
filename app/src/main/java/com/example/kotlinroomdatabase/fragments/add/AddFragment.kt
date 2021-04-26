@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.kotlinroomdatabase.R
-import com.example.kotlinroomdatabase.data.User
+import com.example.kotlinroomdatabase.model.User
 import com.example.kotlinroomdatabase.data.UserViewModel
 import com.example.kotlinroomdatabase.databinding.FragmentAddBinding
 

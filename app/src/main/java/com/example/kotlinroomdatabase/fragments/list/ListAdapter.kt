@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinroomdatabase.R
-import com.example.kotlinroomdatabase.data.User
+import com.example.kotlinroomdatabase.model.User
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
