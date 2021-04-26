@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +37,9 @@ class ListFragment : Fragment() {
 
         // UserViewModel
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        mUserViewModel.readAllData.observe(viewLifecycleOwner, Observer { user ->
+            adapter.setData(user)
+        })
 
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
@@ -49,7 +52,4 @@ class ListFragment : Fragment() {
         super.onDestroyView()
         _binding = null // <- whenever we destroy our fragment, _binding is set to null. Hence it will avoid memory leaks.
     }
-
-
-
 }
