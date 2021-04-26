@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.kotlinroomdatabase"
-        minSdkVersion 21
+        minSdkVersion 26 // Change to 26 since attribute iconTint is used on API level 26 and higher.
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
