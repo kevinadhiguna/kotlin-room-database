@@ -48,7 +48,8 @@ class UpdateFragment : Fragment() {
     private fun updateItem() {
         val firstName = binding.updateFirstNameEt.text.toString()
         val lastName = binding.updateLastNameEt.text.toString()
-        val age = binding.updateAgeEt.text.toString()
+        // val age = binding.updateAgeEt.text.toString() // <- Error : Type mismatch. Required: Int , Found: String.
+        val age = Integer.parseInt(binding.updateAgeEt.text.toString()) // Parses a string returns an integer.
 
         if (inputCheck(firstName, lastName, binding.updateAgeEt.text)) {
             // Create User Object
