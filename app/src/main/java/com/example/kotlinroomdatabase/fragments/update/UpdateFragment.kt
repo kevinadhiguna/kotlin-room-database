@@ -1,5 +1,6 @@
 package com.example.kotlinroomdatabase.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -74,6 +75,11 @@ class UpdateFragment : Fragment() {
     // Inflate the layout to our menu
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    // Handle clicks on menu items
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {
