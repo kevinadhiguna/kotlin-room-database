@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     // id 'kotlin-android-extension' // <- Deprecated since Kotlin 1.4.20-M2
     id 'kotlin-kapt'
+    id 'kotlin-parcelize' // <- In order to use '@Parcelize' since 'kotlin-android-extension' is now deprecated
     id 'androidx.navigation.safeargs.kotlin'
 }
 
