@@ -79,6 +79,9 @@ class UpdateFragment : Fragment() {
 
     // Handle clicks on menu items
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            deleteUser()
+        }
         return super.onOptionsItemSelected(item)
     }
 
