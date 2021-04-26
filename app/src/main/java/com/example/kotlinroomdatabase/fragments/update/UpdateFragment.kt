@@ -1,6 +1,8 @@
 package com.example.kotlinroomdatabase.fragments.update
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,5 +41,9 @@ class UpdateFragment : Fragment() {
         val firstName = view?.findViewById<TextView>(R.id.updateFirstName_et)?.text
         val lastName = view?.findViewById<TextView>(R.id.updateLastName_et)?.text
         val age = view?.findViewById<TextView>(R.id.updateAge_et)?.text.toString()
+    }
+
+    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
     }
 }
