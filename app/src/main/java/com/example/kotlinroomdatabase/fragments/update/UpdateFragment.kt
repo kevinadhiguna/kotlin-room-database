@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.example.kotlinroomdatabase.R
@@ -31,5 +32,12 @@ class UpdateFragment : Fragment() {
 
         return view
         // return binding.root
+    }
+
+    private fun updateItem() {
+        // Adding '?' is a temporary solution
+        val firstName = view?.findViewById<TextView>(R.id.updateFirstName_et)?.text
+        val lastName = view?.findViewById<TextView>(R.id.updateLastName_et)?.text
+        val age = view?.findViewById<TextView>(R.id.updateAge_et)?.text.toString()
     }
 }
