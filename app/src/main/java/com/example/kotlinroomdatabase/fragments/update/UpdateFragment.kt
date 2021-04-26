@@ -21,6 +21,7 @@ class UpdateFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
+        // Inflate the layout for this fragment
         _binding = FragmentUpdateBinding.inflate(inflater, container, false)
 
         binding.updateBtn.setOnClickListener {  }
@@ -29,14 +30,6 @@ class UpdateFragment : Fragment() {
         binding.updateLastNameEt.setText(args.currentUser.lastName)
         binding.updateAgeEt.setText(args.currentUser.age.toString())
 
-        // Inflate the layout for this fragment
-//        val view = inflater.inflate(R.layout.fragment_update, container, false)
-//
-//        view.findViewById<TextView>(R.id.updateFirstName_et).setText(args.currentUser.firstName)
-//        view.findViewById<TextView>(R.id.updateLastName_et).setText(args.currentUser.lastName)
-//        view.findViewById<TextView>(R.id.updateAge_et).setText(args.currentUser.age.toString())
-
-        // return view
         return binding.root
     }
 
@@ -44,11 +37,6 @@ class UpdateFragment : Fragment() {
         val firstName = binding.updateFirstNameEt.text.toString()
         val lastName = binding.updateLastNameEt.text.toString()
         val age = binding.updateAgeEt.text.toString()
-
-        // Adding '?' is a temporary solution
-//        val firstName = view?.findViewById<TextView>(R.id.updateFirstName_et)?.text
-//        val lastName = view?.findViewById<TextView>(R.id.updateLastName_et)?.text
-//        val age = view?.findViewById<TextView>(R.id.updateAge_et)?.text.toString()
     }
 
     private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
