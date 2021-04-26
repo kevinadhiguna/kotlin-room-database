@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinroomdatabase.data.UserDatabase
-import com.example.kotlinroomdatabase.data.UserRepository
+import com.example.kotlinroomdatabase.repository.UserRepository
 import com.example.kotlinroomdatabase.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

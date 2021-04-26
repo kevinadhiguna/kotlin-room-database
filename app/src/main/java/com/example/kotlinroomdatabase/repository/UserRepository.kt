@@ -1,6 +1,7 @@
-package com.example.kotlinroomdatabase.data
+package com.example.kotlinroomdatabase.repository
 
 import androidx.lifecycle.LiveData
+import com.example.kotlinroomdatabase.data.UserDao
 import com.example.kotlinroomdatabase.model.User
 
 // User Repository abstracts access to multiple data sources. However this is not the part of the Architecture Component libraries.
