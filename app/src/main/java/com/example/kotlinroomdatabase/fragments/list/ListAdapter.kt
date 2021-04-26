@@ -32,4 +32,9 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.findViewById<TextView>(R.id.lastName_txt).text = currentItem.lastName
         holder.itemView.findViewById<TextView>(R.id.age_txt).text = currentItem.age.toString()
     }
+
+    fun setData(user: List<User>) {
+        this.userList = user
+        notifyDataSetChanged()
+    }
 }
