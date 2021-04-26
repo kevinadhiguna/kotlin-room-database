@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.kotlinroomdatabase.databinding.FragmentUpdateBinding
+import com.example.kotlinroomdatabase.viewModel.UserViewModel
 
 class UpdateFragment : Fragment() {
 
@@ -17,12 +19,16 @@ class UpdateFragment : Fragment() {
 
     private val args by navArgs<UpdateFragmentArgs>()
 
+    private lateinit var mUserViewModel: UserViewModel
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentUpdateBinding.inflate(inflater, container, false)
+
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         binding.updateBtn.setOnClickListener {  }
 
@@ -37,6 +43,8 @@ class UpdateFragment : Fragment() {
         val firstName = binding.updateFirstNameEt.text.toString()
         val lastName = binding.updateLastNameEt.text.toString()
         val age = binding.updateAgeEt.text.toString()
+
+        if (inputCheck(firstName, lastName, binding.updateAgeEt.text)) {  }
     }
 
     private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
