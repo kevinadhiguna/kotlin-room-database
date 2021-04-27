@@ -97,7 +97,7 @@ class UpdateFragment : Fragment() {
                     .show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment) // Navigate to List Fragment after deleting a user
         }
-        builder.setPositiveButton("No") { _, _ -> }    // Make a "No" option and set action if the user selects "No"
+        builder.setNegativeButton("No") { _, _ -> }    // Make a "No" option and set action if the user selects "No"
         builder.setTitle("Delete ${args.currentUser.firstName} ?")  // Set the title of the prompt with a sentence saying the first name of the user inside the app (using template string)
         builder.setMessage("Are you sure to remove ${args.currentUser.firstName} ?")  // Set the message of the prompt with a sentence saying the first name of the user inside the app (using template string)
         builder.create().show()  // Create a prompt with the configuration above to ask the user (the real app user which is human)
