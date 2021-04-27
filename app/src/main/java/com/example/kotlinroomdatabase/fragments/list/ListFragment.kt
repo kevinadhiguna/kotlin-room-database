@@ -27,11 +27,12 @@ class ListFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentListBinding.inflate(inflater, container, false)
-        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        // val view = inflater.inflate(R.layout.fragment_list, container, false) // <- This is not required.
 
         // RecyclerView
         val adapter = ListAdapter()
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
+        // val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview) // <- This is replaced.
+        val recyclerView = binding.recyclerview
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
