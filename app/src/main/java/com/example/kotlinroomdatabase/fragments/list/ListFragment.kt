@@ -75,7 +75,7 @@ class ListFragment : Fragment() {
                     .show()
             // Note: No need to navigate app user to List Fragment since deleting all users takes place at List Fragment.
         }
-        builder.setPositiveButton("No") { _, _ -> }    // Make a "No" option and set action if the user selects "No"
+        builder.setNegativeButton("No") { _, _ -> }    // Make a "No" option and set action if the user selects "No"
         builder.setTitle("Delete everything ?")  // Set the title of the prompt with a sentence saying the first name of the user inside the app (using template string)
         builder.setMessage("Are you sure to remove everything ?")  // Set the message of the prompt with a sentence saying the first name of the user inside the app (using template string)
         builder.create().show()  // Create a prompt with the configuration above to ask the user (the real app user which is human)
